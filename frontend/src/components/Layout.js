@@ -33,7 +33,7 @@ const Layout = ({ children }) => {
             items-end 
             justify-end
           ">
-            <div className="hidden lg:block mr-4">Gerenciamento de Notícias</div>
+            <div className="hidden lg:block mr-4 font-bold">Gerenciamento de Notícias</div>
           </div>
         </div>
       </header>

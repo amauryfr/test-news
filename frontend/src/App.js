@@ -11,8 +11,9 @@ function App() {
       <Router>
         <Routes>
           <Route path="/" element={<NewsList/>} />
-          <Route path="/news/:id" element={<NewsDetail/>} />
+          <Route path="/:id" element={<NewsDetail/>} />
           <Route path="/create" element={<NewsForm/>} />
+          {/* <Route path="/edit/:id" element={<NewsUpdateForm/>} /> */}
         </Routes>
       </Router>
     </Layout>
