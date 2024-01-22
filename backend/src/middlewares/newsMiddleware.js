@@ -1,8 +1,33 @@
 const validateNews = (req, res, next) => {
   const { category_id, title, url, image, thumbnail, content } = req.body;
+  const errors = [];
 
-  if (!category_id || !title || !url || !image || !thumbnail || !content) {
-    return res.status(400).json({ error: 'Dados obrigatórios faltando.' });
+  if (!category_id || typeof category_id !== 'number') {
+    errors.push('Categoria é obrigatória e precisa ser um número válido.');
+  }
+
+  if (!title) {
+    errors.push('Título é obrigatório.');
+  }
+
+  if (!url) {
+    errors.push('URL é obrigatória.');
+  }
+
+  if (!image) {
+    errors.push('Imagem é obrigatória.');
+  }
+
+  if (!thumbnail) {
+    errors.push('Thumbnail é obrigatório.');
+  }
+
+  if (!content) {
+    errors.push('Conteúdo é obrigatório.');
+  }
+
+  if (errors.length > 0) {
+    return res.status(400).json({ errors });
   }
 
   next();
@@ -18,7 +43,7 @@ const validateId = (req, res, next) => {
   next();
 }
 
-const validateIdAndOneField = (req, res, next) => {
+const validateNewsAndId = (req, res, next) => {
   const { id } = req.params;
   const { category_id, title, url, image, thumbnail, content } = req.body;
 
@@ -26,8 +51,34 @@ const validateIdAndOneField = (req, res, next) => {
     return res.status(400).json({ error: 'ID precisa ser um número.' });
   }
 
-  if (!category_id && !title && !url && !image && !thumbnail && !content) {
-    return res.status(400).json({ error: 'É preciso alterar ao menos um campo.' });
+  const errors = [];
+
+  if (!category_id || typeof category_id !== 'number') {
+    errors.push('Categoria é obrigatória e precisa ser um número válido.');
+  }
+
+  if (!title) {
+    errors.push('Título é obrigatório.');
+  }
+
+  if (!url) {
+    errors.push('URL é obrigatória.');
+  }
+
+  if (!image) {
+    errors.push('Imagem é obrigatória.');
+  }
+
+  if (!thumbnail) {
+    errors.push('Thumbnail é obrigatório.');
+  }
+
+  if (!content) {
+    errors.push('Conteúdo é obrigatório.');
+  }
+
+  if (errors.length > 0) {
+    return res.status(400).json({ errors });
   }
 
   next();
@@ -36,5 +87,5 @@ const validateIdAndOneField = (req, res, next) => {
 module.exports = {
   validateNews,
   validateId,
-  validateIdAndOneField,
+  validateNewsAndId,
 };

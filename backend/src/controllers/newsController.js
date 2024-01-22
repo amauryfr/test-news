@@ -1,5 +1,6 @@
 const { PrismaClient } = require('@prisma/client');
 const prisma = new PrismaClient();
+const { format } = require('date-fns');
 
 const newsController = {
   getAllNews: async (req, res) => {
@@ -25,7 +26,6 @@ const newsController = {
       const news = await prisma.news.findUnique({
         where: {
           id: parseInt(id),
-          deleted_at: null,
         },
         include: {
           Category: true,
@@ -33,9 +33,13 @@ const newsController = {
       });
 
       if (news) {
-        res.json(news);
+        if (news.deleted_at !== null) {
+          res.json({ error: 'Notícia excluida em '+format(new Date(news.deleted_at), 'dd/MM/yyyy HH:mm') });
+        }else{
+          res.json(news);
+        }
       } else {
-        res.status(404).json({ error: 'Notícia não foi encontrada' });
+        res.json({ error: 'Notícia não foi encontrada' });
       }
     } catch (error) {
       console.error('Erro ao buscar uma notícia', error);
@@ -87,6 +91,7 @@ const newsController = {
     }
   },
 
+  //CRIEI ESSA FUNÇÃO PARA EXCLUIR NOTÍCIAS, MAS ESTOU UTILIZANDO O SOFTDELETE. IGUAL ESSA FUNCIONA TAMBÉM
   deleteNews: async (req, res) => {
     const { id } = req.params;
     try {
