@@ -3,6 +3,8 @@ import axios from '../services/api';
 import Button from '@mui/material/Button';
 import { Link } from 'react-router-dom';
 import JoditEditor from "jodit-react";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const NewsForm = () => {
   const [formData, setFormData] = useState({
@@ -41,16 +43,70 @@ const NewsForm = () => {
     }));
   };
 
-  const handleSubmit = (e) => {
+  const resetForm = () => {
+    setFormData({
+      category_id: '',
+      title: '',
+      url: '',
+      image: '',
+      thumbnail: '',
+      content: '',
+    });
+
+    document.getElementById('content').value = '';
+  };
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    
-    console.log('Dados enviados:', formData);
+
+    const formContent = document.getElementById('content').value;
+
+    if(formContent === '<p><br></p>'){
+      toast.error('Conteúdo é obrigatório.');
+      return;
+    }
+
+    console.log({
+      category_id: formData.category_id,
+      title: formData.title,
+      url: formData.url,
+      image: formData.image,
+      thumbnail: formData.thumbnail,
+      content: formContent,
+    });
+
+    try {
+      const response = await axios.post('/api/news', {
+        category_id: Number(formData.category_id),
+        title: formData.title,
+        url: formData.url,
+        image: formData.image,
+        thumbnail: formData.thumbnail,
+        content: formContent,
+      });
+
+      toast.success('Notícia enviada com sucesso!');
+      console.log('Resposta da API:', response.data);
+
+      resetForm();
+    } catch (error) {
+      if (error.response) {
+        console.error('Erro ao enviar notícia:', error.response.data);
+        toast.error('Erro ao enviar notícia: ' + error.response.data.errors.join(' '));
+      } else if (error.request) {
+        console.error('Erro ao enviar notícia: Não foi recebida resposta da API.');
+        toast.error('Erro ao enviar notícia: Não foi recebida resposta da API.');
+      } else {
+        console.error('Erro ao enviar notícia:', error.message);
+        toast.error('Erro ao enviar notícia: ' + error.message);
+      }
+    }
   };
 
   return (
     <div className="container font-sans">
       <div className="flex justify-between mb-6">
-        <h2 className="text-3xl font-bold text-center uppercase font-sans">Puplicar Notícia</h2>
+        <h2 className="text-3xl font-bold text-center uppercase font-sans">Publicar Notícia</h2>
         <Link to={`/`}>
           <Button variant="contained" color="primary">
             Voltar
@@ -143,8 +199,11 @@ const NewsForm = () => {
               Conteúdo
             </label>
             <JoditEditor
-              config={config}
-              onChange={(newContent) => console.log(newContent)}
+              id="content"
+              config={{
+                ...config,
+                shouldPreserveEventFocus: true,
+              }}
             />
           </div>
 
@@ -155,6 +214,7 @@ const NewsForm = () => {
           </div>
         </form>
       </div>
+      <ToastContainer />
     </div>
   );
 };
