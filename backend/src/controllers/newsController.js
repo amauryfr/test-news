@@ -5,6 +5,9 @@ const newsController = {
   getAllNews: async (req, res) => {
     try {
       const allNews = await prisma.news.findMany({
+        where: {
+          deleted_at: null,
+        },
         include: {
           Category: true,
         },
@@ -22,6 +25,7 @@ const newsController = {
       const news = await prisma.news.findUnique({
         where: {
           id: parseInt(id),
+          deleted_at: null,
         },
         include: {
           Category: true,
