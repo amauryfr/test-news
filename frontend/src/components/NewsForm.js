@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from '../services/api';
 import Button from '@mui/material/Button';
 import { Link } from 'react-router-dom';
+import JoditEditor from "jodit-react";
 
 const NewsForm = () => {
   const [formData, setFormData] = useState({
@@ -12,6 +13,8 @@ const NewsForm = () => {
     thumbnail: '',
     content: '',
   });
+
+  const config = {};
 
   const [categories, setCategories] = useState([]);
 
@@ -50,7 +53,7 @@ const NewsForm = () => {
         <h2 className="text-3xl font-bold text-center uppercase font-sans">Puplicar Notícia</h2>
         <Link to={`/`}>
           <Button variant="contained" color="primary">
-            <button>Voltar</button>
+            Voltar
           </Button>
         </Link>
       </div>
@@ -139,12 +142,9 @@ const NewsForm = () => {
             <label htmlFor="content" className="block text-sm font-medium text-gray-600">
               Conteúdo
             </label>
-            <textarea
-              id="content"
-              name="content"
-              value={formData.content}
-              onChange={handleChange}
-              className="mt-1 p-2 w-full border border-gray-300 rounded-md focus:outline-none focus:border-blue-500"
+            <JoditEditor
+              config={config}
+              onChange={(newContent) => console.log(newContent)}
             />
           </div>
 

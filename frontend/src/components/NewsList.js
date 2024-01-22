@@ -55,8 +55,7 @@ const NewsList = () => {
       
       {news.map((item) => {
         return (
-          <div className="grid my-2">
-            <Link to={`/${item.id}`}>
+          <div className="grid my-2" key={item.id}>
             <div className="flex flex-col px-2 py-2 border-t border-gray-300">
               <div className="flex flex-row justify-between items-center mt-1 h-1/3">
                 <h3 className="title font-medium text-lg">{item.title}</h3>
@@ -92,7 +91,6 @@ const NewsList = () => {
                 </Button>
               </div>
             </div>
-            </Link>
           </div>
         );
       })}
