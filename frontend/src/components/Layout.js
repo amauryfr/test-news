@@ -1,9 +1,6 @@
 import React from 'react';
 import Logo from '../assets/logo.png';
 
-//Trocar tipo de fonte
-
-
 const Layout = ({ children }) => {
   return (
     <div className="
