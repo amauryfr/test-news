@@ -1,55 +1,49 @@
 import React from 'react';
-import { ThemeProvider, createTheme } from '@mui/material/styles';
-import CssBaseline from '@mui/material/CssBaseline';
-import Box from '@mui/material/Box';
-import Grid from '@mui/material/Grid';
 import Logo from '../assets/logo.png';
 
-const theme = createTheme({
-  palette: {
-    background: {
-      default: '#E5E5E5',
-    },
-  },
-  typography: {
-    fontFamily: ['"Noto Sans"', 'sans-serif'].join(','),
-  },
-});
+//Trocar tipo de fonte
+
 
 const Layout = ({ children }) => {
   return (
-    <ThemeProvider theme={theme}>
-      <CssBaseline />
-      <Box
-        backgroundColor="#AACCE5"
-        display="flex"
-        flexDirection="column"
-        justifyContent="space-between"
-        alignItems="center"
-        margin="0 auto"
-        height="100px"
-        padding="20px 76px"
-      >
-        <Grid 
-          container 
-          spacing={4} 
-          maxWidth="1100px"
-        >
-          <Grid 
-            item
-            cursor="pointer"
-          >
+    <div className="
+      flex 
+      flex-col 
+      items-center 
+      w-full 
+      bg-gray-900 
+      justify-center 
+    ">
+      <header className="
+        flex 
+        flex-col 
+        items-center
+        bg-gray-800 
+        w-full 
+        text-center 
+        py-4 
+      ">
+        <div className="flex w-full lg:max-w-6xl">
+          <div className="w-full ml-4">
             <img src={Logo} alt="Logotipo" />
-          </Grid>
-          <Grid item xs alignItems="rigth">
-            <h1>Gerenciamento de notícias</h1>
-          </Grid>
-        </Grid>
-      </Box>
-      <Box flex="1" textAlign="left" padding="0 16px">
+          </div>
+          <div className="
+            w-full 
+            font-medium 
+            text-4xl 
+            text-white 
+            flex 
+            items-end 
+            justify-end
+          ">
+            <div className="hidden lg:block mr-4">Gerenciamento de Notícias</div>
+          </div>
+        </div>
+      </header>
+      <main className="mb-4 w-full bg-white lg:max-w-6xl p-4">
         {children}
-      </Box>
-    </ThemeProvider>
+      </main>
+    </div>
   );
 };
 
