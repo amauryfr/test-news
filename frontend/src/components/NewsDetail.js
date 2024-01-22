@@ -30,7 +30,7 @@ const NewsDetail = () => {
           <h2 className="text-3xl font-bold text-center uppercase font-sans">Detalhes da Notícia</h2>
           <Link to={`/`}>
             <Button variant="contained" color="primary">
-              <button>Voltar</button>
+              Voltar
             </Button>
           </Link>
         </div>
@@ -46,7 +46,7 @@ const NewsDetail = () => {
           <h2 className="text-3xl font-bold text-center uppercase font-sans">Detalhes da Notícia</h2>
           <Link to={`/`}>
             <Button variant="contained" color="primary">
-              <button>Voltar</button>
+              Voltar
             </Button>
           </Link>
         </div>

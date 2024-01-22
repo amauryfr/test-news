@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 import axios from '../services/api';
 import Button from '@mui/material/Button';
 import { format } from 'date-fns';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const NewsList = () => {
   const [news, setNews] = useState([]);
@@ -30,9 +32,9 @@ const NewsList = () => {
 
         await axios.patch(`/api/news/${id}`);
 
-        alert('Notícia excluída com sucesso!');
+        toast.success('Notícia excluída com sucesso!');
 
-        window.location.reload();
+        setNews((prevNews) => prevNews.filter((newsItem) => newsItem.id !== id));
 
       } catch (error) {
         console.error('Erro ao excluir notícia:', error);
@@ -44,6 +46,7 @@ const NewsList = () => {
 
   return (
     <div className="container font-sans">
+      <ToastContainer />
       <div className="flex justify-between items-center mb-6">
         <h2 className="text-3xl font-bold text-center uppercase font-sans">Listagem de Notícias</h2>
         <Link to="/create">
