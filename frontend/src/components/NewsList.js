@@ -6,6 +6,7 @@ import { format } from 'date-fns';
 
 const NewsList = () => {
   const [news, setNews] = useState([]);
+  const [deletingNews, setDeletingNews] = useState([]);
 
   useEffect(() => {
     const fetchNews = async () => {
@@ -19,6 +20,27 @@ const NewsList = () => {
 
     fetchNews();
   }, []);
+
+  const handleDeleteClick = async (id) => {
+    const confirmed = window.confirm('Tem certeza que deseja excluir esta notícia?');
+
+    if (confirmed) {
+      try {
+        setDeletingNews((prevDeletingNews) => [...prevDeletingNews, id]);
+
+        await axios.patch(`/api/news/${id}`);
+
+        alert('Notícia excluída com sucesso!');
+
+        window.location.reload();
+
+      } catch (error) {
+        console.error('Erro ao excluir notícia:', error);
+      } finally {
+        setDeletingNews((prevDeletingNews) => prevDeletingNews.filter((newsId) => newsId !== id));
+      }
+    }
+  };
 
   return (
     <div className="container font-sans">
@@ -56,11 +78,18 @@ const NewsList = () => {
                 <p>
                   <strong>Data da publicação:</strong> {format(new Date(item.created_at), 'dd/MM/yyyy HH:mm')}
                 </p>
-                <Link to={`/delete/${item.id}`}>
-                  <Button style={{ width: '100px' }} variant="outlined" color="error">
-                    Excluir
-                  </Button>
-                </Link>
+                <Button
+                  style={{ width: '100px' }}
+                  variant="outlined"
+                  color="error"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    handleDeleteClick(item.id);
+                  }}
+                  disabled={deletingNews.includes(item.id)}
+                >
+                  {deletingNews.includes(item.id) ? 'Excluindo...' : 'Excluir'}
+                </Button>
               </div>
             </div>
             </Link>
