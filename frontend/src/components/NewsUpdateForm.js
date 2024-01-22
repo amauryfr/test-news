@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import axios from '../services/api';
 import Button from '@mui/material/Button';
-import { Link } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import JoditEditor from "jodit-react";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 const NewsForm = () => {
+  const { id } = useParams();
   const [formData, setFormData] = useState({
     category_id: '',
     title: '',
@@ -31,8 +32,24 @@ const NewsForm = () => {
       }
     };
 
+    const fetchNewsData = async () => {
+      if (id) {
+        try {
+          const response = await axios.get(`/api/news/${id}`);
+          const newsData = response.data;
+
+          setFormData(newsData);
+        } catch (error) {
+          console.error('Erro ao buscar dados da notícia:', error);
+        }
+      }else{
+        toast.error('Notícia não encontrada.');
+      }
+    };
+
     fetchCategories();
-  }, []);
+    fetchNewsData();
+  }, [id]);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -40,18 +57,6 @@ const NewsForm = () => {
       ...prevData,
       [name]: value,
     }));
-  };
-
-  const resetForm = () => {
-    setFormData({
-      category_id: '',
-      title: '',
-      url: '',
-      image: '',
-      thumbnail: '',
-    });
-
-    document.getElementById('content').value = '';
   };
 
   const handleSubmit = async (e) => {
@@ -74,7 +79,7 @@ const NewsForm = () => {
     });
 
     try {
-      const response = await axios.post('/api/news', {
+      const response = await axios.put(`/api/news/${id}`, {
         category_id: Number(formData.category_id),
         title: formData.title,
         url: formData.url,
@@ -83,20 +88,19 @@ const NewsForm = () => {
         content: formContent,
       });
 
-      toast.success('Notícia enviada com sucesso!');
+      toast.success('Notícia atualizada com sucesso!');
       console.log('Resposta da API:', response.data);
 
-      resetForm();
     } catch (error) {
       if (error.response) {
-        console.error('Erro ao enviar notícia:', error.response.data);
-        toast.error('Erro ao enviar notícia: ' + error.response.data.errors.join(' '));
+        console.error('Erro ao atualizar notícia:', error.response.data);
+        toast.error('Erro ao atualizar notícia: ' + error.response.data.errors.join(' '));
       } else if (error.request) {
-        console.error('Erro ao enviar notícia: Não foi recebida resposta da API.');
-        toast.error('Erro ao enviar notícia: Não foi recebida resposta da API.');
+        console.error('Erro ao atualizar notícia: Não foi recebida resposta da API.');
+        toast.error('Erro ao atualizar notícia: Não foi recebida resposta da API.');
       } else {
-        console.error('Erro ao enviar notícia:', error.message);
-        toast.error('Erro ao enviar notícia: ' + error.message);
+        console.error('Erro ao atualizar notícia:', error.message);
+        toast.error('Erro ao atualizar notícia: ' + error.message);
       }
     }
   };
@@ -104,7 +108,7 @@ const NewsForm = () => {
   return (
     <div className="container font-sans">
       <div className="flex justify-between mb-6">
-        <h2 className="text-3xl font-bold text-center uppercase font-sans">Publicar Notícia</h2>
+        <h2 className="text-3xl font-bold text-center uppercase font-sans">Editar Notícia</h2>
         <Link to={`/`}>
           <Button variant="contained" color="primary">
             Voltar
@@ -113,7 +117,6 @@ const NewsForm = () => {
       </div>
       <div className="container mt-8 flex justify-start">
         <form onSubmit={handleSubmit} className="w-full max-w-xl">
-
           <div className="mb-4">
             <label htmlFor="category_id" className="block text-sm font-medium text-gray-700">
               Categoria
@@ -198,6 +201,7 @@ const NewsForm = () => {
             </label>
             <JoditEditor
               id="content"
+              value={formData.content}
               config={{
                 ...config,
                 shouldPreserveEventFocus: true,
@@ -207,7 +211,7 @@ const NewsForm = () => {
 
           <div className="mb-6">
             <Button style={{ width: '200px' }} variant="outlined" color="primary" type="submit">
-              Publicar
+              Alterar
             </Button>
           </div>
         </form>
