@@ -8,7 +8,7 @@ Siga as instruções abaixo para começar.
 
 Certifique-se de ter as seguintes ferramentas instaladas em seu sistema:
 
-- [Node.js](https://nodejs.org/) (v14 ou superior)
+- [Node.js](https://nodejs.org/)
 - [Docker](https://www.docker.com/)
 - [npm](https://www.npmjs.com/)
 
