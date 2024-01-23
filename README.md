@@ -14,45 +14,31 @@ Certifique-se de ter as seguintes ferramentas instaladas em seu sistema:
 
 ## Instalação
 
-1. **Instale as dependências do projeto:**
+1. **Inicie os serviços com Docker Compose:**
 
 ```bash
-npm install
+docker-compose up
 ```
 
-2. **Aplique as migrações do banco de dados:**
+## Caso o PRISMA não funcione com o docker, execute os comandos dentro de backend
+
+1. **Aplique as migrações do banco de dados:**
 
 ```bash
-npx prisma migrate dev
+npx prisma migrate deploy
 ```
 
-3. **Execute os scripts de seed para popular o banco de dados:**
+2. **Execute as seeds para popular o banco de dados:**
 
 ```bash
-node backend/prisma/seeds/category.js
-node backend/prisma/seeds/news.js
+node prisma/seeds/category.js
+node prisma/seeds/news.js
 ```
 
-4. **Inicie os serviços do Docker Compose:**
-
-```bash
-docker-compose up -d
-```
-
-5. **Inicie o servidor backend:**
-
-```bash
-npm run dev
-```
-
-6. **Inicie o frontend:**
-
-```bash
-npm start
-```
 
 Agora, você deve ser capaz de acessar a aplicação em http://localhost:3000.
 
 ## Observações
-- A collection com as rotas do postman estão na raiz do projeto
+- A collection com as rotas do postman estão na raiz do projeto: News.postman_collection.json
+- Tem um dump do banco de testes na raiz do projeto: test-news.sql
 - O projeto utiliza o prisma para gerenciar o banco de dados

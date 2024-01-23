@@ -1,0 +1,35 @@
+version: '3'
+
+services:
+
+  mysql:
+    image: mysql:latest
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD:-usernews-news123}
+      MYSQL_DATABASE: ${MYSQL_DATABASE:-news}
+      MYSQL_USER: ${MYSQL_USER:-usernews}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD:-news123}
+    ports:
+      - "3310:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+
+  backend:
+    build:
+      context: ./backend
+    ports:
+      - "3001:3001"
+    depends_on:
+      - mysql
+
+  frontend:
+    build:
+      context: ./frontend
+    ports:
+      - "3000:3000"
+
+volumes:
+  mysql_data:
+
+  
