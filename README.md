@@ -16,8 +16,6 @@ Certifique-se de ter as seguintes ferramentas instaladas em seu sistema:
 
   npm install
 
-Esse projeto utiliza o Prisma para gerenciar o banco de dados
-
 2. **Aplique as migrações do banco de dados:**
 
   npx prisma migrate dev
