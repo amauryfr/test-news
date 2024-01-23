@@ -1,0 +1,242 @@
+{
+	"info": {
+		"_postman_id": "ab9b4e07-351a-4cb7-83fc-31be6966cbea",
+		"name": "News",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "16070177"
+	},
+	"item": [
+		{
+			"name": "Listar Notícias",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3001/api/news",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"news"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Mostrar um Notícia",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3001/api/news/13",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"news",
+						"13"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Criar Notícia",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "category_id",
+						"value": "1",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "title",
+						"value": "Visita de integrante do CV a ministério dificulta a vida de Flávio Dino na corrida à vaga ao STF",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "url",
+						"value": "https://www.estadao.com.br/politica/monica-gugliano/visita-de-integrante-do-cv-a-ministerio-dificulta-a-vida-de-flavio-dino-na-corrida-a-vaga-ao-stf/",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "image",
+						"value": "https://www.estadao.com.br/resizer/GoaFoVG3UQNupZaW1aEk-ICk4CE=/380x0/filters:quality(70):format(jpg)/cloudfront-us-east-1.images.arcpublishing.com/estadao/3XFU3QE5O5CZNKJUXF3E2FRQ3Q.jpg",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "thumbnail",
+						"value": "https://www.estadao.com.br/resizer/3m0u6y18yF_RqtUEY3o_R9uRIFc=/350x199/smart/filters:quality(70):format(jpg)/arc-anglerfish-arc2-prod-estadao/public/3XFU3QE5O5CZNKJUXF3E2FRQ3Q.jpg",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "content",
+						"value": "<p>Em meio a escolha do futuro titular para a vaga do <a data-open-inapp=\\\"true\\\" data-app-template=\\\"tudo-sobre\\\" href=\\\"https://www.estadao.com.br/tudo-sobre/stf-supremo-tribunal-federal/\\\" target=\\\"_blank\\\"><b>Supremo Tribunal Federal (STF)</b></a>, pode ter rendido pontos negativos para o ministro da Justiça e Segurança Pública, <a data-open-inapp=\\\"true\\\" data-app-template=\\\"tudo-sobre\\\" href=\\\"https://www.estadao.com.br/tudo-sobre/flavio-dino/\\\" target=\\\"_blank\\\"><b>Flávio Dino</b></a> - um dos postulantes ao cargo - a notícia de que Luciane Barbosa Farias, mulher de Clemilson dos Santos Farias, um dos chefes do Comando Vermelho no Amazonas, o Tio Patinhas, <a data-open-inapp=\\\"true\\\" data-app-template=\\\"noticia\\\" href=\\\"https://www.estadao.com.br/politica/ministerio-da-justica-recebeu-mulher-de-lider-do-comando-vermelho-para-duas-reunioes/\\\" target=\\\"_blank\\\"><b>visitou duas vezes neste ano a Pasta que ele comanda</b></a>. Não que a visita, por sí só, seja atestado de alguma irregularidade. Mas, eticamente, não repercutiu bem no Palácio do Planalto, onde Lula tem dito que deverá definir o nome do novo integrante da Corte até o fim deste mês.</p><p>No páreo pelo cargo, estão, além de Dino, o Advogado Geral da União (AGU), <a data-open-inapp=\\\"true\\\" data-app-template=\\\"tudo-sobre\\\" href=\\\"https://www.estadao.com.br/tudo-sobre/jorge-messias/\\\" target=\\\"_blank\\\"><b>Jorge Messias</b></a>, e o presidente do Tribunal de Contas (TCU), <a data-open-inapp=\\\"true\\\" data-app-template=\\\"tudo-sobre\\\" href=\\\"https://www.estadao.com.br/tudo-sobre/bruno-dantas/\\\" target=\\\"_blank\\\"><b>Bruno Dantas</b></a>. Lula tinha duas indicações que poderia fazer neste mandato. A primeira delas, a do substituto do ministro Ricardo Lewandowski, ficou com seu advogado <a data-open-inapp=\\\"true\\\" data-app-template=\\\"tudo-sobre\\\" href=\\\"https://www.estadao.com.br/tudo-sobre/cristiano-zanin-martins/\\\" target=\\\"_blank\\\"><b>Cristiano Zanin</b></a>. A segunda, a da ministra Rosa Weber, que se aposentou em setembro, é a que está indefinida.</p><p><div class=\\\"mm_conteudo blog-multimidia foto\\\">                                <figure class=\\\"n--noticia__image modulo-noticia\\\">                                    <img                                        loading=\\\"lazy\\\"                                        class=\\\"size-full\\\"                                        src=\\\"https://www.estadao.com.br/resizer/ewYU-aCt8duGLfOYg9aWb9RtBBM=/380x0/filters:quality(70):format(jpg)/cloudfront-us-east-1.images.arcpublishing.com/estadao/WO3YW4BI7ZBMLOKEVMC4GHAHV4.JPG\\\"                                        alt=\\\"Wilton Junior/Estadão\\\" />                                    <figcaption>Flávio Dino disputa vaga ao STF com Bruno Dantas, ministro do TCU, e Jorge Messias, advogado geral da União Foto: Wilton Junior/Estadão</figcaption>                                </figure>                            </div></p><p>Embora com menos intensidade do que já foi, nenhum dos três deixou os contatos políticos de lado. Eles continuam travando uma luta intensa nos bastidores e nos subterrâneos da política. À sua maneira, cada um prosseguiu conversando com assessores e outras pessoas próximas a Lula. Os alvos foram os senadores e outros ministros do STF que, como todos neste jogo, têm também suas preferências. Corre em Brasília que <a data-open-inapp=\\\"true\\\" data-app-template=\\\"tudo-sobre\\\" href=\\\"https://www.estadao.com.br/tudo-sobre/gilmar-mendes/\\\" target=\\\"_blank\\\"><b>Gilmar Mendes</b></a> e <a data-open-inapp=\\\"true\\\" data-app-template=\\\"tudo-sobre\\\" href=\\\"https://www.estadao.com.br/tudo-sobre/alexandre-de-moraes/\\\" target=\\\"_blank\\\"><b>Alexandre de Moraes</b></a> não só preferem Dino, como já informaram pessoalmente a Lula.</p><p>Entre as razões de a campanha nestes últimos dias ter entrado em banho-maria, está principalmente o fato de que se dizia que Lula já tinha escolhido Dino e que só não anunciava a decisão pelo fato de ela depender de uma composição política mais ampla. Por exemplo: quem sucederia o ministro? Seria seu secretário-executivo <a data-open-inapp=\\\"true\\\" data-app-template=\\\"tudo-sobre\\\" href=\\\"https://www.estadao.com.br/tudo-sobre/ricardo-capelli/\\\" target=\\\"_blank\\\"><b>Ricardo Capelli</b></a> que disputaria o cargo com outros 500 e que ganhou holofotes nos últimos onze meses, com fama de \"entregador\"? A área da segurança continuaria na pasta ou seria dividida, indo para um ministério próprio?<div class=\\\"lista-numerada-noticia list-numbered modulo-noticia\\\"><h3 class=\\\"lista-numerada-title numbered-title\\\">Leia também</h3><ul class=\\\"indice-ranking\\\"><li><a data-open-inapp=\\\"true\\\" data-app-template=\\\"noticia\\\" href=\\\"https://www.estadao.com.br/politica/ministerio-da-justica-recebeu-mulher-de-lider-do-comando-vermelho-para-duas-reunioes/\\\" title=\\\"Ministério da Justiça recebeu mulher de líder do Comando Vermelho para duas reuniões\\\"><figure class=\\\"image-ranking\\\"><div class=\\\"pos \\\">1</div><img src=\\\"https://www.estadao.com.br/resizer/oveW9Aalc6ULmYoMhwJPQfn0sOU=/300x0/arc-anglerfish-arc2-prod-estadao/public/OWEG4R2JOVKSBO2X4ZIFBGKYC4.jpg\\\" pinger-seen=\\\"true\\\"></figure><div class=\\\"ln-right\\\"><div class=\\\"ln-right-title title-ranking\\\">Ministério da Justiça recebeu mulher de líder do Comando Vermelho para duas reuniões</div><p class=\\\"description-ranking\\\"></div></a></li><li><a data-open-inapp=\\\"true\\\" data-app-template=\\\"noticia\\\" href=\\\"https://www.estadao.com.br/politica/saiba-quem-e-tio-patinhas-lider-do-comando-vermelho-cuja-esposa-se-reuniu-com-equipe-de-flavio-dino/\\\" title=\\\"Saiba quem é Tio Patinhas, líder do Comando Vermelho cuja esposa se reuniu com equipe de Flávio Dino\\\"><figure class=\\\"image-ranking\\\"><div class=\\\"pos \\\">2</div><img src=\\\"https://www.estadao.com.br/resizer/ZqZub_p3RscJToiQKJkxjo1nw0Y=/300x0/arc-anglerfish-arc2-prod-estadao/public/TK2FJP6MXVBMDFTOOF2C4NKSBQ.jpg\\\" pinger-seen=\\\"true\\\"></figure><div class=\\\"ln-right\\\"><div class=\\\"ln-right-title title-ranking\\\">Saiba quem é Tio Patinhas, líder do Comando Vermelho cuja esposa se reuniu com equipe de Flávio Dino</div><p class=\\\"description-ranking\\\"></div></a></li><li><a data-open-inapp=\\\"true\\\" data-app-template=\\\"noticia\\\" href=\\\"https://www.estadao.com.br/politica/flavio-dino-culpa-secretario-comando-vermelho-ministerio-justica-nprp/\\\" title=\\\"Dino joga a culpa para secretário, que diz que integrante do Comando Vermelho era uma 'acompanhante'\\\"><figure class=\\\"image-ranking\\\"><div class=\\\"pos \\\">3</div><img src=\\\"https://www.estadao.com.br/resizer/g3tBCjIeNKUDFTJew3xrKeMyLco=/300x0/arc-anglerfish-arc2-prod-estadao/public/MMFY6HLKSNBYJHEBPVU6SW7IDE.JPG\\\" pinger-seen=\\\"true\\\"></figure><div class=\\\"ln-right\\\"><div class=\\\"ln-right-title title-ranking\\\">Dino joga a culpa para secretário, que diz que integrante do Comando Vermelho era uma 'acompanhante'</div><p class=\\\"description-ranking\\\"></div></a></li></ul></div></p><p>Luciane Farias, como foi noticiado pelo <b>Estadão</b>,<b> </b><a data-open-inapp=\\\"true\\\" data-app-template=\\\"noticia\\\" href=\\\"https://www.estadao.com.br/politica/sala-de-secretario-que-recebeu-integrante-do-cv-fica-no-mesmo-andar-que-gabinete-de-flavio-dino/\\\" target=\\\"_blank\\\"><b>se encontrou com o secretário de Assuntos Legislativos no Ministério da Justiça, Elias Vaz</b></a>. Segundo ele disse em redes sociais, recebeu uma solicitação de audiência da ex-deputada estadual e vice-presidente da Comissão Nacional de Assuntos Penitenciários da Anacrim (Associação Nacional de Advocacia Criminal). Se a escorregada fizer com que ele perca o cargo, o encontro não pode deixar de ser visto também pela ótica dos rituais de Brasília.</p><p>Existe o hábito de receber pessoas, cuja procedência nem sempre é devidamente checada. Acontece em todos os ministérios, mas nem por isso se justifica em qualquer um deles, muito menos no Ministério da Justica e Segurança. E não foi a primeira vez. Em maio, ela esteve com Rafael Velasco, secretário da Senappen (Secretaria Nacional de Políticas Penais), também vinculada ao ministério.</p><p>Mas a dimensão exata do estrago ou não na candidatura de Dino ao STF só se saberá com o correr dos dias. Até agora<a data-open-inapp=\\\"true\\\" data-app-template=\\\"noticia\\\" href=\\\"https://www.estadao.com.br/politica/presenca-do-comando-vermelho-no-ministerio-da-justica-vira-assunto-mais-comentado-do-pais-no-x-twitter-nprp/\\\" target=\\\"_blank\\\"><b>, o tema tem sido o mais comentado nas redes sociais</b></a>, sempre em tom de indignação. E rendeu munição contra o Governo que era dispensável neste momento em que o Palácio do Planalto comemora pesquisas positivas de opinião e o sucesso da repatriação de mais de mil brasileiros da guerra entre Israel e o Hamas, concluída ontem com a<a data-open-inapp=\\\"true\\\" data-app-template=\\\"noticia\\\" href=\\\"https://www.estadao.com.br/internacional/brasileiros-resgatados-da-faixa-de-gaza-chegam-ao-brasil/\\\" target=\\\"_blank\\\"> <b>chegada de 30 cidadãos da Faixa de Gaza</b></a>.<div class=\\\"lista-numerada-noticia list-numbered modulo-noticia\\\"><h3 class=\\\"lista-numerada-title numbered-title\\\">Leia mais</h3><ul class=\\\"indice-ranking\\\"><li><a data-open-inapp=\\\"true\\\" data-app-template=\\\"noticia\\\" href=\\\"https://www.estadao.com.br/politica/esposa-tio-patinhas-comando-vermelho-flavio-dino-ministro-justica-seguranca-publica-amazonas-governo-lula-luciane-barbosa-clemilson-santos-farias-nprp/\\\" title=\\\"Entenda como esposa de líder do Comando Vermelho se encontrou com assessores de Dino\\\"><figure class=\\\"image-ranking\\\"><div class=\\\"pos \\\">1</div><img src=\\\"https://www.estadao.com.br/resizer/2u_sF32-LTTT3G4BSMEX0r07XSs=/300x0/arc-anglerfish-arc2-prod-estadao/public/KRNLLIE35ZBPTFTVEKLY44XKHE.jpeg\\\" pinger-seen=\\\"true\\\"></figure><div class=\\\"ln-right\\\"><div class=\\\"ln-right-title title-ranking\\\">Entenda como esposa de líder do Comando Vermelho se encontrou com assessores de Dino</div><p class=\\\"description-ranking\\\"></div></a></li><li><a data-open-inapp=\\\"true\\\" data-app-template=\\\"noticia\\\" href=\\\"https://www.estadao.com.br/politica/sala-de-secretario-que-recebeu-integrante-do-cv-fica-no-mesmo-andar-que-gabinete-de-flavio-dino/\\\" title=\\\"Sala de secretário que recebeu integrante do CV fica no mesmo andar que gabinete de Flávio Dino\\\"><figure class=\\\"image-ranking\\\"><div class=\\\"pos \\\">2</div><img src=\\\"https://www.estadao.com.br/resizer/X5Cx69D1IxHK_QR4PxglydWeiak=/300x0/arc-anglerfish-arc2-prod-estadao/public/SHA65FOYOBDJZOKOK5KQBEQFN4.jpeg\\\" pinger-seen=\\\"true\\\"></figure><div class=\\\"ln-right\\\"><div class=\\\"ln-right-title title-ranking\\\">Sala de secretário que recebeu integrante do CV fica no mesmo andar que gabinete de Flávio Dino</div><p class=\\\"description-ranking\\\"></div></a></li><li><a data-open-inapp=\\\"true\\\" data-app-template=\\\"noticia\\\" href=\\\"https://www.estadao.com.br/politica/eliane-cantanhede/livre-leve-e-solta-dama-do-trafico-expoe-audacia-do-crime-e-desleixo-na-capital-da-republica/\\\" title=\\\"Eliane Cantanhêde: Livre, leve e solta, 'dama do tráfico' expõe audácia do crime e desleixo na capital da República\\\"><figure class=\\\"image-ranking\\\"><div class=\\\"pos \\\">3</div><img src=\\\"https://www.estadao.com.br/resizer/WcFUMgsV99sCrPJFfpcdVOfQrqc=/300x0/arc-anglerfish-arc2-prod-estadao/public/6ZP4QOWBNFD5DIFPV5TU7N7ZRA.png\\\" pinger-seen=\\\"true\\\"></figure><div class=\\\"ln-right\\\"><div class=\\\"ln-right-title title-ranking\\\">Eliane Cantanhêde: Livre, leve e solta, 'dama do tráfico' expõe audácia do crime e desleixo na capital da República</div><p class=\\\"description-ranking\\\"></div></a></li></ul></div></p><p></p>",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"category_id\": 1,\r\n  \"title\": \"asd\",\r\n  \"url\": \"http://exemplo.com\",\r\n  \"image\": \"http://exemplo.com/imagem.jpg\",\r\n  \"thumbnail\": \"http://exemplo.com/thumbnail.jpg\",\r\n  \"content\": \"Conteúdo da notícia\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3001/api/news/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"news",
+						""
+					],
+					"query": [
+						{
+							"key": "category_id",
+							"value": "1",
+							"disabled": true
+						},
+						{
+							"key": "title",
+							"value": "Visita de integrante do CV a ministério dificulta a vida de Flávio Dino na corrida à vaga ao STF",
+							"disabled": true
+						},
+						{
+							"key": "url",
+							"value": "https://www.estadao.com.br/politica/monica-gugliano/visita-de-integrante-do-cv-a-ministerio-dificulta-a-vida-de-flavio-dino-na-corrida-a-vaga-ao-stf/",
+							"disabled": true
+						},
+						{
+							"key": "image",
+							"value": "https://www.estadao.com.br/resizer/GoaFoVG3UQNupZaW1aEk-ICk4CE=/380x0/filters:quality(70):format(jpg)/cloudfront-us-east-1.images.arcpublishing.com/estadao/3XFU3QE5O5CZNKJUXF3E2FRQ3Q.jpg",
+							"disabled": true
+						},
+						{
+							"key": "thumbnail",
+							"value": "https://www.estadao.com.br/resizer/3m0u6y18yF_RqtUEY3o_R9uRIFc=/350x199/smart/filters:quality(70):format(jpg)/arc-anglerfish-arc2-prod-estadao/public/3XFU3QE5O5CZNKJUXF3E2FRQ3Q.jpg",
+							"disabled": true
+						},
+						{
+							"key": "content",
+							"value": "<p>Em meio a escolha do futuro titular para a vaga do <a data-open-inapp=\\\"true\\\" data-app-template=\\\"tudo-sobre\\\" href=\\\"https://www.estadao.com.br/tudo-sobre/stf-supremo-tribunal-federal/\\\" target=\\\"_blank\\\"><b>Supremo Tribunal Federal (STF)</b></a>, pode ter rendido pontos negativos para o ministro da Justiça e Segurança Pública, <a data-open-inapp=\\\"true\\\" data-app-template=\\\"tudo-sobre\\\" href=\\\"https://www.estadao.com.br/tudo-sobre/flavio-dino/\\\" target=\\\"_blank\\\"><b>Flávio Dino</b></a> — um dos postulantes ao cargo — a notícia de que Luciane Barbosa Farias, mulher de Clemilson dos Santos Farias, um dos chefes do Comando Vermelho no Amazonas, o Tio Patinhas, <a data-open-inapp=\\\"true\\\" data-app-template=\\\"noticia\\\" href=\\\"https://www.estadao.com.br/politica/ministerio-da-justica-recebeu-mulher-de-lider-do-comando-vermelho-para-duas-reunioes/\\\" target=\\\"_blank\\\"><b>visitou duas vezes neste ano a Pasta que ele comanda</b></a>. Não que a visita, por sí só, seja atestado de alguma irregularidade. Mas, eticamente, não repercutiu bem no Palácio do Planalto, onde Lula tem dito que deverá definir o nome do novo integrante da Corte até o fim deste mês.</p><p>No páreo pelo cargo, estão, além de Dino, o Advogado Geral da União (AGU), <a data-open-inapp=\\\"true\\\" data-app-template=\\\"tudo-sobre\\\" href=\\\"https://www.estadao.com.br/tudo-sobre/jorge-messias/\\\" target=\\\"_blank\\\"><b>Jorge Messias</b></a>, e o presidente do Tribunal de Contas (TCU), <a data-open-inapp=\\\"true\\\" data-app-template=\\\"tudo-sobre\\\" href=\\\"https://www.estadao.com.br/tudo-sobre/bruno-dantas/\\\" target=\\\"_blank\\\"><b>Bruno Dantas</b></a>. Lula tinha duas indicações que poderia fazer neste mandato. A primeira delas, a do substituto do ministro Ricardo Lewandowski, ficou com seu advogado <a data-open-inapp=\\\"true\\\" data-app-template=\\\"tudo-sobre\\\" href=\\\"https://www.estadao.com.br/tudo-sobre/cristiano-zanin-martins/\\\" target=\\\"_blank\\\"><b>Cristiano Zanin</b></a>. A segunda, a da ministra Rosa Weber, que se aposentou em setembro, é a que está indefinida.</p><p><div class=\\\"mm_conteudo blog-multimidia foto\\\">                                <figure class=\\\"n--noticia__image modulo-noticia\\\">                                    <img                                        loading=\\\"lazy\\\"                                        class=\\\"size-full\\\"                                        src=\\\"https://www.estadao.com.br/resizer/ewYU-aCt8duGLfOYg9aWb9RtBBM=/380x0/filters:quality(70):format(jpg)/cloudfront-us-east-1.images.arcpublishing.com/estadao/WO3YW4BI7ZBMLOKEVMC4GHAHV4.JPG\\\"                                        alt=\\\"Wilton Junior/Estadão\\\" />                                    <figcaption>Flávio Dino disputa vaga ao STF com Bruno Dantas, ministro do TCU, e Jorge Messias, advogado geral da União Foto: Wilton Junior/Estadão</figcaption>                                </figure>                            </div></p><p>Embora com menos intensidade do que já foi, nenhum dos três deixou os contatos políticos de lado. Eles continuam travando uma luta intensa nos bastidores e nos subterrâneos da política. À sua maneira, cada um prosseguiu conversando com assessores e outras pessoas próximas a Lula. Os alvos foram os senadores e outros ministros do STF que, como todos neste jogo, têm também suas preferências. Corre em Brasília que <a data-open-inapp=\\\"true\\\" data-app-template=\\\"tudo-sobre\\\" href=\\\"https://www.estadao.com.br/tudo-sobre/gilmar-mendes/\\\" target=\\\"_blank\\\"><b>Gilmar Mendes</b></a> e <a data-open-inapp=\\\"true\\\" data-app-template=\\\"tudo-sobre\\\" href=\\\"https://www.estadao.com.br/tudo-sobre/alexandre-de-moraes/\\\" target=\\\"_blank\\\"><b>Alexandre de Moraes</b></a> não só preferem Dino, como já informaram pessoalmente a Lula.</p><p>Entre as razões de a campanha nestes últimos dias ter entrado em banho-maria, está principalmente o fato de que se dizia que Lula já tinha escolhido Dino e que só não anunciava a decisão pelo fato de ela depender de uma composição política mais ampla. Por exemplo: quem sucederia o ministro? Seria seu secretário-executivo <a data-open-inapp=\\\"true\\\" data-app-template=\\\"tudo-sobre\\\" href=\\\"https://www.estadao.com.br/tudo-sobre/ricardo-capelli/\\\" target=\\\"_blank\\\"><b>Ricardo Capelli</b></a> que disputaria o cargo com outros 500 e que ganhou holofotes nos últimos onze meses, com fama de “entregador”? A área da segurança continuaria na pasta ou seria dividida, indo para um ministério próprio?<div class=\\\"lista-numerada-noticia list-numbered modulo-noticia\\\"><h3 class=\\\"lista-numerada-title numbered-title\\\">Leia também</h3><ul class=\\\"indice-ranking\\\"><li><a data-open-inapp=\\\"true\\\" data-app-template=\\\"noticia\\\" href=\\\"https://www.estadao.com.br/politica/ministerio-da-justica-recebeu-mulher-de-lider-do-comando-vermelho-para-duas-reunioes/\\\" title=\\\"Ministério da Justiça recebeu mulher de líder do Comando Vermelho para duas reuniões\\\"><figure class=\\\"image-ranking\\\"><div class=\\\"pos \\\">1</div><img src=\\\"https://www.estadao.com.br/resizer/oveW9Aalc6ULmYoMhwJPQfn0sOU=/300x0/arc-anglerfish-arc2-prod-estadao/public/OWEG4R2JOVKSBO2X4ZIFBGKYC4.jpg\\\" pinger-seen=\\\"true\\\"></figure><div class=\\\"ln-right\\\"><div class=\\\"ln-right-title title-ranking\\\">Ministério da Justiça recebeu mulher de líder do Comando Vermelho para duas reuniões</div><p class=\\\"description-ranking\\\"></div></a></li><li><a data-open-inapp=\\\"true\\\" data-app-template=\\\"noticia\\\" href=\\\"https://www.estadao.com.br/politica/saiba-quem-e-tio-patinhas-lider-do-comando-vermelho-cuja-esposa-se-reuniu-com-equipe-de-flavio-dino/\\\" title=\\\"Saiba quem é Tio Patinhas, líder do Comando Vermelho cuja esposa se reuniu com equipe de Flávio Dino\\\"><figure class=\\\"image-ranking\\\"><div class=\\\"pos \\\">2</div><img src=\\\"https://www.estadao.com.br/resizer/ZqZub_p3RscJToiQKJkxjo1nw0Y=/300x0/arc-anglerfish-arc2-prod-estadao/public/TK2FJP6MXVBMDFTOOF2C4NKSBQ.jpg\\\" pinger-seen=\\\"true\\\"></figure><div class=\\\"ln-right\\\"><div class=\\\"ln-right-title title-ranking\\\">Saiba quem é Tio Patinhas, líder do Comando Vermelho cuja esposa se reuniu com equipe de Flávio Dino</div><p class=\\\"description-ranking\\\"></div></a></li><li><a data-open-inapp=\\\"true\\\" data-app-template=\\\"noticia\\\" href=\\\"https://www.estadao.com.br/politica/flavio-dino-culpa-secretario-comando-vermelho-ministerio-justica-nprp/\\\" title=\\\"Dino joga a culpa para secretário, que diz que integrante do Comando Vermelho era uma ‘acompanhante’\\\"><figure class=\\\"image-ranking\\\"><div class=\\\"pos \\\">3</div><img src=\\\"https://www.estadao.com.br/resizer/g3tBCjIeNKUDFTJew3xrKeMyLco=/300x0/arc-anglerfish-arc2-prod-estadao/public/MMFY6HLKSNBYJHEBPVU6SW7IDE.JPG\\\" pinger-seen=\\\"true\\\"></figure><div class=\\\"ln-right\\\"><div class=\\\"ln-right-title title-ranking\\\">Dino joga a culpa para secretário, que diz que integrante do Comando Vermelho era uma ‘acompanhante’</div><p class=\\\"description-ranking\\\"></div></a></li></ul></div></p><p>Luciane Farias, como foi noticiado pelo <b>Estadão</b>,<b> </b><a data-open-inapp=\\\"true\\\" data-app-template=\\\"noticia\\\" href=\\\"https://www.estadao.com.br/politica/sala-de-secretario-que-recebeu-integrante-do-cv-fica-no-mesmo-andar-que-gabinete-de-flavio-dino/\\\" target=\\\"_blank\\\"><b>se encontrou com o secretário de Assuntos Legislativos no Ministério da Justiça, Elias Vaz</b></a>. Segundo ele disse em redes sociais, recebeu uma solicitação de audiência da ex-deputada estadual e vice-presidente da Comissão Nacional de Assuntos Penitenciários da Anacrim (Associação Nacional de Advocacia Criminal). Se a escorregada fizer com que ele perca o cargo, o encontro não pode deixar de ser visto também pela ótica dos rituais de Brasília.</p><p>Existe o hábito de receber pessoas, cuja procedência nem sempre é devidamente checada. Acontece em todos os ministérios, mas nem por isso se justifica em qualquer um deles, muito menos no Ministério da Justica e Segurança. E não foi a primeira vez. Em maio, ela esteve com Rafael Velasco, secretário da Senappen (Secretaria Nacional de Políticas Penais), também vinculada ao ministério.</p><p>Mas a dimensão exata do estrago ou não na candidatura de Dino ao STF só se saberá com o correr dos dias. Até agora<a data-open-inapp=\\\"true\\\" data-app-template=\\\"noticia\\\" href=\\\"https://www.estadao.com.br/politica/presenca-do-comando-vermelho-no-ministerio-da-justica-vira-assunto-mais-comentado-do-pais-no-x-twitter-nprp/\\\" target=\\\"_blank\\\"><b>, o tema tem sido o mais comentado nas redes sociais</b></a>, sempre em tom de indignação. E rendeu munição contra o Governo que era dispensável neste momento em que o Palácio do Planalto comemora pesquisas positivas de opinião e o sucesso da repatriação de mais de mil brasileiros da guerra entre Israel e o Hamas, concluída ontem com a<a data-open-inapp=\\\"true\\\" data-app-template=\\\"noticia\\\" href=\\\"https://www.estadao.com.br/internacional/brasileiros-resgatados-da-faixa-de-gaza-chegam-ao-brasil/\\\" target=\\\"_blank\\\"> <b>chegada de 30 cidadãos da Faixa de Gaza</b></a>.<div class=\\\"lista-numerada-noticia list-numbered modulo-noticia\\\"><h3 class=\\\"lista-numerada-title numbered-title\\\">Leia mais</h3><ul class=\\\"indice-ranking\\\"><li><a data-open-inapp=\\\"true\\\" data-app-template=\\\"noticia\\\" href=\\\"https://www.estadao.com.br/politica/esposa-tio-patinhas-comando-vermelho-flavio-dino-ministro-justica-seguranca-publica-amazonas-governo-lula-luciane-barbosa-clemilson-santos-farias-nprp/\\\" title=\\\"Entenda como esposa de líder do Comando Vermelho se encontrou com assessores de Dino\\\"><figure class=\\\"image-ranking\\\"><div class=\\\"pos \\\">1</div><img src=\\\"https://www.estadao.com.br/resizer/2u_sF32-LTTT3G4BSMEX0r07XSs=/300x0/arc-anglerfish-arc2-prod-estadao/public/KRNLLIE35ZBPTFTVEKLY44XKHE.jpeg\\\" pinger-seen=\\\"true\\\"></figure><div class=\\\"ln-right\\\"><div class=\\\"ln-right-title title-ranking\\\">Entenda como esposa de líder do Comando Vermelho se encontrou com assessores de Dino</div><p class=\\\"description-ranking\\\"></div></a></li><li><a data-open-inapp=\\\"true\\\" data-app-template=\\\"noticia\\\" href=\\\"https://www.estadao.com.br/politica/sala-de-secretario-que-recebeu-integrante-do-cv-fica-no-mesmo-andar-que-gabinete-de-flavio-dino/\\\" title=\\\"Sala de secretário que recebeu integrante do CV fica no mesmo andar que gabinete de Flávio Dino\\\"><figure class=\\\"image-ranking\\\"><div class=\\\"pos \\\">2</div><img src=\\\"https://www.estadao.com.br/resizer/X5Cx69D1IxHK_QR4PxglydWeiak=/300x0/arc-anglerfish-arc2-prod-estadao/public/SHA65FOYOBDJZOKOK5KQBEQFN4.jpeg\\\" pinger-seen=\\\"true\\\"></figure><div class=\\\"ln-right\\\"><div class=\\\"ln-right-title title-ranking\\\">Sala de secretário que recebeu integrante do CV fica no mesmo andar que gabinete de Flávio Dino</div><p class=\\\"description-ranking\\\"></div></a></li><li><a data-open-inapp=\\\"true\\\" data-app-template=\\\"noticia\\\" href=\\\"https://www.estadao.com.br/politica/eliane-cantanhede/livre-leve-e-solta-dama-do-trafico-expoe-audacia-do-crime-e-desleixo-na-capital-da-republica/\\\" title=\\\"Eliane Cantanhêde: Livre, leve e solta, ‘dama do tráfico’ expõe audácia do crime e desleixo na capital da República\\\"><figure class=\\\"image-ranking\\\"><div class=\\\"pos \\\">3</div><img src=\\\"https://www.estadao.com.br/resizer/WcFUMgsV99sCrPJFfpcdVOfQrqc=/300x0/arc-anglerfish-arc2-prod-estadao/public/6ZP4QOWBNFD5DIFPV5TU7N7ZRA.png\\\" pinger-seen=\\\"true\\\"></figure><div class=\\\"ln-right\\\"><div class=\\\"ln-right-title title-ranking\\\">Eliane Cantanhêde: Livre, leve e solta, ‘dama do tráfico’ expõe audácia do crime e desleixo na capital da República</div><p class=\\\"description-ranking\\\"></div></a></li></ul></div></p><p></p>",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Alterar Notícia",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"category_id\": 3,\r\n  \"title\": \"asd\",\r\n  \"url\": \"http://exemplo.com\",\r\n  \"image\": \"http://exemplo.com/imagem.jpg\",\r\n  \"thumbnail\": \"http://exemplo.com/thumbnail.jpg\",\r\n  \"content\": \"Alterada Conteúdo da notícia\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3001/api/news/20",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"news",
+						"20"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Deletar Noticia por Software",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3001/api/news/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"news",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Deletar Notícia",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3001/api/news/8",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"news",
+						"8"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Listar Categorias",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3001/api/category",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"category"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
